@@ -1,0 +1,40 @@
+from tkinter import *
+from tkinter import messagebox
+import datetime as dt 
+
+# Create the main window
+top = Tk()
+top.geometry("400x600") 
+top.title("Form") 
+date = dt.datetime.now()
+top.configure(background="light sky blue")
+
+# Label and Entry fields for patient information
+lb1 = Label(top, text="PATIENT INFORMATION", bg="light sky blue", font=("bold", 15)).place(x=80, y=0) 
+namel = Label(top, text="Name", bg="light sky blue", font=("bold", 15)).place(x=30, y=50)
+agel = Label(top, text="Age", bg="light sky blue", font=("bold", 15)).place(x=30, y=90)
+hcnl = Label(top, text="Health card no", bg="light sky blue", font=("bold", 15)).place(x=30, y=130)
+genderl = Label(top, text="Gender", bg="light sky blue", font=("bold", 15)).place(x=30, y=170)
+numberl = Label(top, text="Phone no ", bg="light sky blue", font=("bold", 15)).place(x=30, y=210)
+dobl = Label(top, text="Date Of Birth ", bg="light sky blue", font=("bold", 15)).place(x=30, y=250)
+locl = Label(top, text="Address ", bg="light sky blue", font=("bold", 15)).place(x=30, y=290)
+
+n = Entry(top)
+n.place(x=200, y=50) 
+age = Entry(top)
+age.place(x=200, y=90)  
+hcn = Entry(top)
+hcn.place(x=200, y=130)
+number = Entry(top)
+number.place(x=200, y=210)
+dob = Entry(top)
+dob.place(x=200, y=250) 
+loc = Entry(top)
+loc.place(x=125, y=290, height=27, width=202)
+
+# Dropdown menu for gender selection
+options_gender = ["Male", "Female"]
+clicked1 = StringVar()
+clicked1.set("Select")
+G = OptionMenu(top, clicked1, *options_gender)
+G.place(x=200, y=170)
