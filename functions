@@ -1,0 +1,70 @@
+def submit():
+    # Function to handle the submit button click event
+    f = open("Data.txt", "a+")
+    f.write("------------------------------")
+    f.write("\n\nDate and time : " + str(date))
+    f.write("\nName : " + n.get())
+    f.write("\nAge : " + age.get())
+    f.write("\nGender : " + clicked1.get())
+    f.write("\nHealth card no. : " + hcn.get())
+    f.write("\nLocation : " + loc.get())
+    f.write("\nPhone no. : " + number.get())
+    f.write("\nDate Of Birth : " + dob.get())
+    f.write("\n\n")
+    f.write("------------------------------")
+    f.close()
+    messagebox.showinfo("Info", "Data saved!!")
+
+def z1():
+    messagebox.showinfo("Submitted", "Our partner will deliver your report")
+
+def z2():
+    messagebox.showinfo("Submitted", "We will reach your area")
+
+def z3():
+    messagebox.showinfo("Submitted", "Our partner will deliver your medicines")
+
+def z4():
+    messagebox.showinfo("Submitted", "Your appointment has been scheduled")
+
+def o1():
+    # Function for handling "Get Your Reports" option
+    top = Toplevel()
+    top.geometry("350x300")
+    top.title("Reports")
+    top.configure(background="white")
+    lb1 = Label(top, text="GET YOUR REPORTS", bg="white", font=("bold", 15)).place(x=60, y=0)
+    namel = Label(top, text="Report number ", bg="white", font=("bold", 15)).place(x=30, y=50)
+    n = Entry(top)
+    n.place(x=200, y=50)
+    sb = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z1).place(x=178, y=100)
+    sb = Button(top, text="Back", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=178, y=150)
+
+def o2():
+    # Function for handling "Book Lab Test" option
+    top = Toplevel()
+    top.geometry("350x300")
+    top.title("Book Lab Test")
+    top.configure(background="white")
+    lb1 = Label(top, text="Take Test At Your Doorstep", bg="white", font=("bold", 15)).place(x=60, y=0)
+    namel = Label(top, text="Enter location ", bg="white", font=("bold", 15)).place(x=30, y=50)
+    n = Entry(top)
+    n.place(x=200, y=50)
+    namel = Label(top, text="Test name ", bg="white", font=("bold", 15)).place(x=30, y=100)
+    n = Entry(top)
+    n.place(x=200, y=100)
+    namel = Label(top, text="Date to take test ", bg="white", font=("bold", 15)).place(x=30, y=150)
+    n = Entry(top)
+    n.place(x=200, y=150)
+    sb = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z2).place(x=178, y=200)
+    sb = Button(top, text="Back", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=178, y=250)
+
+# Buttons for form submission and different options
+submit_button = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=submit).place(x=125, y=330)
+report_button = Button(top, text="Get Your Reports", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=o1).place(x=125, y=370)
+lab_test_button = Button(top, text="Book Lab Test", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=o2).place(x=125, y=410)
+medicine_button = Button(top, text="Buy Medicines", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z3).place(x=125, y=450)
+appointment_button = Button(top, text="Book Appointment", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z4).place(x=125, y=490)
+
+# Run the main event loop
+top.mainloop()
