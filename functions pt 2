@@ -1,0 +1,58 @@
+def o3():
+    # Function for handling "Buy Medicines" option
+    top = Toplevel()
+    top.geometry("350x300")
+    top.title("Medicine")
+    top.configure(background="white")
+    lb1 = Label(top, text="Book Your Medicines", bg="white", font=("bold", 15)).place(x=60, y=0)
+    namel = Label(top, text="Medicine name", bg="white", font=("bold", 15)).place(x=30, y=50)
+    n = Entry(top)
+    n.place(x=200, y=50)
+    namel = Label(top, text="MG", bg="white", font=("bold", 15)).place(x=30, y=100)
+    n = Entry(top)
+    n.place(x=200, y=100)
+    namel = Label(top, text="Medicines quantity", bg="white", font=("bold", 15)).place(x=30, y=150)
+    n = Entry(top)
+    n.place(x=200, y=150)
+    sb = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z3).place(x=178, y=200)
+    sb = Button(top, text="Back", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=178, y=250)
+
+def o4():
+    # Function for handling "Book Appointment" option
+    top = Toplevel()
+    top.geometry("350x300")
+    top.title("Appointment")
+    top.configure(background="white")
+    lb1 = Label(top, text="Book Appointment", bg="white", font=("bold", 15)).place(x=60, y=0)
+    namel = Label(top, text="Location", bg="white", font=("bold", 15)).place(x=30, y=50)
+    n = Entry(top)
+    n.place(x=200, y=50)
+    namel = Label(top, text="Specialization", bg="white", font=("bold", 15)).place(x=30, y=100)
+    n = Entry(top)
+    n.place(x=200, y=100)
+    namel = Label(top, text="Date", bg="white", font=("bold", 15)).place(x=30, y=150)
+    n = Entry(top)
+    n.place(x=200, y=150)
+    sb = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=z4).place(x=178, y=200)
+    sb = Button(top, text="Back", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=178, y=250)
+
+def w1():
+    # Function for handling "Service" option
+    top = Toplevel()
+    top.geometry("350x300")
+    top.title("Service")
+    top.configure(background="light sky blue")
+    lb1 = Label(top, text="SELECT A SERVICE", bg="light sky blue", font=("bold", 15)).place(x=60, y=0)
+    b1 = Button(top, text="Reports", width=15, height=5, bg='green', fg='white', activebackground="blue", activeforeground="white", command=o1).place(x=50, y=50)
+    b2 = Button(top, text="Book LAb Tests", width=15, height=5, bg='green', fg='white', activebackground="blue", activeforeground="white", command=o2).place(x=50, y=150)
+    b3 = Button(top, text="Buy Medicines", width=15, height=5, bg='green', fg='white', activebackground="blue", activeforeground="white", command=o3).place(x=180, y=50)
+    b4 = Button(top, text="Book Appointment", width=15, height=5, bg='green', fg='white', activebackground="blue", activeforeground="white", command=o4).place(x=180, y=150)
+    sb = Button(top, text="Back", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=150, y=250)
+
+# Create buttons and assign their functionality
+sbmitbtn = Button(top, text="Submit", width=20, bg='brown', fg='white', activebackground="pink", activeforeground="blue", command=submit).place(x=178, y=350)
+opbtn = Button(top, text="Service", width=20, bg='green', fg='white', activebackground="pink", activeforeground="blue", command=w1).place(x=178, y=390)
+sb = Button(top, text="Exit", width=20, bg='black', fg='white', activebackground="pink", activeforeground="blue", command=top.destroy).place(x=178, y=430)
+
+# Run the main event loop
+top.mainloop()
